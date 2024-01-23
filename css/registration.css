@@ -1,0 +1,62 @@
+.birthday_details,.emailMobile-label,
+.emailMobile-input,.passcpass-label,
+.passcpass-input,#gender_div,#birthday_label,
+.full-name,#sex{
+    display: flex !important;
+    justify-content:space-around !important;
+    gap: 5px !important;
+}
+.form-body{
+    display: flex !important;
+    justify-content: space-around !important;
+    padding: 25px 25px;
+    
+}
+body{
+    /* color: rgba(255, 255, 255, .8); */
+    background-image: url('../images/forms/reg_back_signup');
+    background-size: cover;
+    
+}
+#signUp{
+    width: 200px;
+}
+.signUp-button{
+    display: flex !important;
+    justify-content:space-around!important;
+    align-items: center;
+    padding-top: 10px !important;
+}
+.footer-text,h6{
+    color: #777;
+}
+span{
+    color: red;
+}
+#namesur{
+    display:flex;
+    justify-content:space-between;
+}
+#mobileEmailSpan,#pass_cnf,#dateOf-birthDiv{
+    display: flex;
+    justify-content: space-between;
+}
+.email_span_div{
+    padding-left: 180px;
+}
+#yearError{
+    padding-right: 70px;
+}
+#emailSpan{
+    padding-right: 30px;
+}
+form{
+    padding: 15px;
+}
+.card-body {
+    flex: 1 1 auto;
+    padding: 0;
+    color: var(--bs-card-color);
+}
+
+

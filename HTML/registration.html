@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Registration Page</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <link rel="stylesheet" href="../css/registration.css">
+        <link rel="icon" type="image/x-icon" href="../images/favicon/indexFav.png">
+    </head>
+    <body>
+        <nav class="navbar navbar-dark bg-dark">
+            <div class="container-fluid justify-content-between">
+                <!-- <a href="../index.html"><button class="btn btn-outline-success me-2" type="button">Home</button></a> -->
+                <a href="../index.html"><button class="btn btn-outline-success me-2" type="button">Home</button></a>
+                <a href="./login.html"><button class="btn btn-primary me-2" type="button">Login</button></a>
+                <!-- <a href="css.html"><button class="btn btn-outline-success me-2" type="button">CSS</button></a>
+                <a href="bootstrap.html"><button class="btn btn-outline-success me-2" type="button">BOOTSTRAP</button></a>
+                <a href="react.html"><button class="btn btn-outline-success me-2" type="button">REACT.JS</button></a>
+                <a href="angular.html"><button class="btn btn-outline-success me-2" type="button">ANGULAR</button></a>
+                <a href="vue.html"><button class="btn btn-outline-success me-2" type="button">VUE.JS</button></a>
+                <a href="jquery.html"><button class="btn btn-outline-success me-2" type="button">JQUERY</button></a>
+                <a href="../index.html"><button class="btn btn-primary me-2" type="button">Log Out</button></a> -->
+                <!-- <a href="python.html"><button class="btn btn-outline-success me-2" type="button">PYTHON</button></a> -->
+                </div>
+        </nav>
+        <div class="container form-body">
+            <div class="row card form-card">
+                <div class="col-md-12 card-body">
+                    <form action="./login.html" style="width :50vw; height:fit-content;" name="signUp-form">
+                        <h4 style="color:green">USER REGISTRATION FORM</h4><p>its super easy</p><hr>
+                            <label for="fullName" id="fullName" class="form-label label">FULL NAME</label>
+                            <br>
+                            <div class="full-name"><span id="name_error"></span>
+                                <span id="surname_error"></span></div>
+                            <div class="full-name">
+                                
+                                
+                                <input type="text" name="name" id="name" class="form-control userInp" placeholder="Enter Your Name" onkeyup="validateName()"><br>
+                                <input type="text" name="sureName" id="surName" class="form-control userInp" placeholder="Surname" onkeyup="validateSurname()">
+                            </div>
+                            
+                            <br>
+                            <label for="Education" class="form-label label" id="education">CHOOSE YOUR HIGHER EDUCATIONAL QUALIFICATION</label>
+                            <div><span id="edu-error"></span></div><br>
+                            <select id="Edu" class="form-select input"  name="education" onclick="validateEducation()">
+                                <option value="" selected>choose one</option>
+                                <option value="belowSslc">BELOW-SSLC</option>
+                                <option value="sslc">SSLC</option>
+                                <option value="plusTwo">PLUS-TWO</option>
+                                <option value="ug">UG</option>
+                                <option value="pg">PG</option>
+                            </select>
+                            <span id="edu-error"></span><br>
+                            <div id="emailMobile" class="emailMobile">
+                                <div class="emailMobile-label">
+                                    <label for="mobileNo" id="mobileNo" class="form-label label">MOBILE NUMBER</label>
+                                    <label for="emial" id="email" class="form-label label">EMAIL</label>
+                                </div>
+                                <div id="mobileEmailSpan">
+                                    <span id="mob"></span>
+                                    <div class="email_span_div"><span id="emailSpan"></span></div><br>
+                                </div>
+                                <div class="emailMobile-input">
+                                    <input type="text" name="number" id="number" class="form-control input" placeholder="please enter mobile number" onkeyup="validateNumber()">
+                                    <input type="email" name="email" id="emailId" class="form-control input" placeholder="please enter your email" onkeyup="emailValidate()">
+                                </div>
+                            </div><br>
+                            <div class="passcpass">
+                                <div class="passcpass-label">
+                                    <label for="password" id="passw" class="form-label label">NEW PASSWORD</label>
+                                    <label for="cnfm-password" id="cnf-passw" class="form-label label">CONFORM PASSWORD</label>
+                                </div>
+                                <div id="pass_cnf">
+                                    <span id="password_error"></span>
+                                    <span id="cnfPassword_error"></span>
+                                </div><br>
+                                <div class="passcpass-input">
+                                    <input type="password" name="n_password" id="n_password" class="form-control input" placeholder="please enter your password" onkeyup="passwordValidation()">
+                                    <input type="password" name="cnf_password" id="cnf_password" class="form-control input" placeholder="Re Enter your password" onkeyup="cnfValidation()">
+                                </div>
+                            </div>
+                            <br>
+                            <label for="birthday_main" class="label">BIRTHDAY?</label>
+                            <div id="birthday" class="birthday">
+                                <label for="bithday" id="birthday_head" class="form-label birthday_label"></label>
+                                <div id="birthday_label">
+                                    <label for="birth_day" id="birth_day" class="form-label labelbr">DAY</label>
+                                    <label for="birth_month" id="birth_month" class="form-label label">MONTH</label>
+                                    <label for="birth_year" id="birth_year" class="form-label label">YEAR</label>
+                                </div>
+                                <div id="dateOf-birthDiv">
+                                    <span id="dayError"></span>
+                                    <span id="monthError"></span>
+                                    <span id="yearError"></span>
+                                </div>
+                                <div class="birthday_details">
+                                    <select name="day" id="day" aria-label="day" title="day" class="form-select" onclick="dayValidate()">
+                                        <option value="" selected>Choose Day</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                        <option value="9">9</option>
+                                        <option value="10">10</option>
+                                        <option value="11">11</option>
+                                        <option value="12">12</option>
+                                        <option value="13">13</option>
+                                        <option value="14">14</option>
+                                        <option value="15">15</option>
+                                        <option value="16">16</option>
+                                        <option value="17">17</option>
+                                        <option value="18">18</option>
+                                        <option value="19">19</option>
+                                        <option value="20">20</option>
+                                        <option value="21">21</option>
+                                        <option value="22">22</option>
+                                        <option value="23">23</option>
+                                        <option value="24">24</option>
+                                        <option value="25">25</option>
+                                        <option value="26">26</option>
+                                        <option value="27">27</option>
+                                        <option value="28">28</option>
+                                        <option value="29">29</option>
+                                        <option value="30">30</option>
+                                        <option value="31">31</option>
+                                    </select>
+                                    <select name="month" id="month" title="month" class="form-select" onclick="monthValidation()">
+                                        <option value="" selected>Choose Month</option>
+                                        <option value="1">Jan</option>
+                                        <option value="2">Feb</option>
+                                        <option value="3">Mar</option>
+                                        <option value="4">Apr</option>
+                                        <option value="5">May</option>
+                                        <option value="6">Jun</option>
+                                        <option value="7">Jul</option>
+                                        <option value="8">Aug</option>
+                                        <option value="9">Sep</option>
+                                        <option value="10">Oct</option>
+                                        <option value="11">Nov</option>
+                                        <option value="12">Dec</option>
+                                    </select>
+                                    <select name="year" id="year" title="year" class="form-select" onclick="yearValidation()">
+                                        <option value="" selected>Choose Year</option>
+                                        <option value="2024">2024</option>
+                                        <option value="2023">2023</option>
+                                        <option value="2022">2022</option>
+                                        <option value="2021">2021</option>
+                                        <option value="2020">2020</option>
+                                        <option value="2019">2019</option>
+                                        <option value="2018">2018</option>
+                                        <option value="2017">2017</option>
+                                        <option value="2016">2016</option>
+                                        <option value="2015">2015</option>
+                                        <option value="2014">2014</option>
+                                        <option value="2013">2013</option>
+                                        <option value="2012">2012</option>
+                                        <option value="2011">2011</option>
+                                        <option value="2010">2010</option>
+                                        <option value="2009">2009</option>
+                                        <option value="2008">2008</option>
+                                        <option value="2007">2007</option>
+                                        <option value="2006">2006</option>
+                                        <option value="2005">2005</option>
+                                        <option value="2004">2004</option>
+                                        <option value="2003">2003</option>
+                                        <option value="2002">2002</option>
+                                        <option value="2001">2001</option>
+                                        <option value="2000">2000</option>
+                                        <option value="1999">1999</option>
+                                        <option value="1998">1998</option>
+                                        <option value="1997">1997</option>
+                                        <option value="1996">1996</option>
+                                        <option value="1995">1995</option>
+                                        <option value="1994">1994</option>
+                                        <option value="1993">1993</option>
+                                        <option value="1992">1992</option>
+                                        <option value="1991">1991</option>
+                                        <option value="1990">1990</option>
+                                        <option value="1989">1989</option>
+                                        <option value="1988">1988</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <br>
+                            <label for="gender" id="gender" class="form-label label">Gender?</label>
+                            <div id="gender_div"><span id="gender_error"></span></div><br>
+                            <div id="sex">
+                                    <label for="sex" class="form-check-label">Female</label>
+                                    <input type="radio" name="sex" class="form-check-input" required>
+                                    <label for="sex" class="form-check-label">Male</label>
+                                    <input type="radio" name="sex" class="form-check-input">
+                                    <label for="sex" class="form-check-label">Custom</label>
+                                    <input type="radio" class="form-check-input" name="sex">
+                            </div>
+                            <br>
+                            <div id="form_Div"><span id="formSpan"></span></div>
+                            <hr>
+                            <div id="footer">
+                                <p class="card-text footer-text">
+                                    <small>
+                                        People who use our service may have uploaded your contact information to
+                                        our website. <a href="#">Learn more</a>.
+                                    </small
+                                    <small>
+                                        By clicking Sign Up, you agree to our <a href="#">Terms, Privacy Policy</a> and <a href="#">Cookies</a>
+                                        Policy. You may receive SMS notifications from us and can opt out at any time.
+                                    </small>
+                                </p>
+                            </div>
+                            <div class="signUp-button"><button type="submit" class="btn btn-success" id="signUp" onclick="return formValidate()">Sign Up</button></div>
+                        <!-- </div> -->
+                    </form>
+                </div>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+        <script src="../scripts/script.js"></script>
+    </body>
+</html>

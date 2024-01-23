@@ -1,0 +1,37 @@
+body{
+    background-color: darkslategray;
+}
+.banner-image{
+    padding-top: 2em;
+    width:100%;
+    height: 70vh; 
+}
+
+.main-para-div{
+    margin-top: 3rem;
+}
+.main-para{
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    font-size: large;
+    font-weight: bolder;
+    letter-spacing: normal;
+    color: aliceblue;
+    line-height: 2em;
+}
+
+.main-buttons{
+    margin-bottom: 3rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.footer{
+    margin-top: 3rem;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    color: white;
+}
